@@ -156,7 +156,7 @@ class WC_New_Customer_Report_Report extends WC_Admin_Report {
 	/**
 	 * Render the main chart
 	 *
-	 * @since 2.0.0
+	 * @since 1.0.0
 	 */
 	public function get_main_chart() {
 
@@ -287,23 +287,22 @@ class WC_New_Customer_Report_Report extends WC_Admin_Report {
 		$this->report_data = new stdClass();
 
 		$orders = $this->get_order_report_data( array(
-			'data' => array(
+			'data'         => array(
 				'_billing_email' => array(
-					'type' => 'meta',
+					'type'     => 'meta',
 					'function' => '',
-					'name' => 'email',
+					'name'     => 'email',
 				),
-				'post_date' => array(
+				'post_date'      => array(
 					'type'     => 'post_data',
 					'function' => '',
 					'name'     => 'date'
 				),
 			),
-			'order_by'            => 'post_date ASC',
-			'query_type'          => 'get_results',
-			'order_types'         => wc_get_order_types( 'sales-reports' ),
-			'order_status'        => array( 'completed', 'processing', 'on-hold' ),
-			'nocache' => true,
+			'order_by'     => 'post_date ASC',
+			'query_type'   => 'get_results',
+			'order_types'  => wc_get_order_types( 'sales-reports' ),
+			'order_status' => array( 'completed', 'processing', 'on-hold' ),
 		) );
 
 

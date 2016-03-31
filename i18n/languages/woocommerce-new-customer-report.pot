@@ -13,132 +13,81 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: build/includes/class-wc-new-customer-report.php:138
-#: build/includes/class-wc-new-customer-report.php:148
-#: build/includes/class-wc-new-customer-report.php:541
-#: build/includes/class-wc-new-customer-report.php:551
-#: includes/class-wc-new-customer-report.php:185
-msgid "New Customers"
-msgstr ""
-
-#: build/includes/class-wc-new-customer-report.php:139
-#: build/includes/class-wc-new-customer-report.php:153
-#: build/includes/class-wc-new-customer-report.php:542
-#: build/includes/class-wc-new-customer-report.php:556
-#: includes/class-wc-new-customer-report.php:195
-msgid "Returning Customers"
-msgstr ""
-
-#: build/includes/class-wc-new-customer-report.php:172
-#: build/includes/class-wc-new-customer-report.php:575
-msgid "customers"
-msgstr ""
-
-#: build/includes/class-wc-new-customer-report.php:204
+#: build/includes/class-wc-new-customer-report.php:66
 #: includes/class-wc-new-customer-report.php:66
 msgid "Year"
 msgstr ""
 
-#: build/includes/class-wc-new-customer-report.php:205
+#: build/includes/class-wc-new-customer-report.php:67
 #: includes/class-wc-new-customer-report.php:67
 msgid "Last Month"
 msgstr ""
 
-#: build/includes/class-wc-new-customer-report.php:206
+#: build/includes/class-wc-new-customer-report.php:68
 #: includes/class-wc-new-customer-report.php:68
 msgid "This Month"
 msgstr ""
 
-#: build/includes/class-wc-new-customer-report.php:207
+#: build/includes/class-wc-new-customer-report.php:69
 #: includes/class-wc-new-customer-report.php:69
 msgid "Last 7 Days"
 msgstr ""
 
-#: build/includes/class-wc-new-customer-report.php:251
+#: build/includes/class-wc-new-customer-report.php:102
 #: includes/class-wc-new-customer-report.php:102
 msgid "Date"
 msgstr ""
 
-#: build/includes/class-wc-new-customer-report.php:268
+#: build/includes/class-wc-new-customer-report.php:117
 #: includes/class-wc-new-customer-report.php:117
 msgid "Export CSV"
 msgstr ""
 
-#: build/includes/class-wc-new-customer-report.php:289
-#. translators: Placeholders: %1$s is the formatted new customer count with
-#. surrounding <strong> tags, e.g. <strong>312</strong>
-msgid "%1$s new customers in this period"
-msgstr ""
-
-#: build/includes/class-wc-new-customer-report.php:290
-msgid "Customers who placed their first order with your store in this time period."
-msgstr ""
-
-#: build/includes/class-wc-new-customer-report.php:298
-#. translators: Placeholders: %1$s is the formatted returning customer count
-#. with surrounding <strong> tags, e.g. <strong>267</strong>
-msgid "%1$s returning customers in this period"
-msgstr ""
-
-#: build/includes/class-wc-new-customer-report.php:299
-msgid "Customers who placed a repeat order with your store in this time period."
-msgstr ""
-
-#: build/woocommerce-new-customer-report.php:35
-#. translators: Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s
-#. are <a> tags
-msgid ""
-"%1$sWooCommerce New Customer Report is inactive.%2$s This plugin requires "
-"WooCommerce to function. Please %3$sinstall WooCommerce%4$s"
-msgstr ""
-
-#: build/woocommerce-new-customer-report.php:58
-#. translators: Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s
-#. are <a> tags
-msgid ""
-"%1$sWooCommerce New Customer Report is inactive.%2$s This plugin requires "
-"WooCommerce 2.3 or newer. Please %3$supdate WooCommerce to version 2.3 or "
-"newer%4$s"
-msgstr ""
-
-#: build/woocommerce-new-customer-report.php:149
-#: woocommerce-new-customer-report.php:151
-msgid "View Report"
-msgstr ""
-
-#: build/woocommerce-new-customer-report.php:182
-#: woocommerce-new-customer-report.php:184
-msgid "New vs. Returning"
-msgstr ""
-
+#: build/includes/class-wc-new-customer-report.php:138
 #: includes/class-wc-new-customer-report.php:138
 #. translators: Placeholders: %1$s is the formatted new customer count with
 #. surrounding <strong> tags, e.g. <strong>5</strong>
 msgid "%1$s new customers"
 msgstr ""
 
+#: build/includes/class-wc-new-customer-report.php:139
 #: includes/class-wc-new-customer-report.php:139
 msgid "Total new customers in this time period."
 msgstr ""
 
+#: build/includes/class-wc-new-customer-report.php:147
 #: includes/class-wc-new-customer-report.php:147
 #. translators: Placeholders: %1$s is the formatted returning customer count
 #. with surrounding <strong> tags, e.g. <strong>10</strong>
 msgid "%1$s returning customers"
 msgstr ""
 
+#: build/includes/class-wc-new-customer-report.php:148
 #: includes/class-wc-new-customer-report.php:148
 msgid "Total returning customers in this time period."
 msgstr ""
 
+#: build/includes/class-wc-new-customer-report.php:185
+#: includes/class-wc-new-customer-report.php:185
+msgid "New Customers"
+msgstr ""
+
+#: build/includes/class-wc-new-customer-report.php:191
 #: includes/class-wc-new-customer-report.php:191
 msgid "new customers"
 msgstr ""
 
+#: build/includes/class-wc-new-customer-report.php:195
+#: includes/class-wc-new-customer-report.php:195
+msgid "Returning Customers"
+msgstr ""
+
+#: build/includes/class-wc-new-customer-report.php:201
 #: includes/class-wc-new-customer-report.php:201
 msgid "returning customers"
 msgstr ""
 
+#: build/woocommerce-new-customer-report.php:35
 #: woocommerce-new-customer-report.php:35
 #. translators: Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s
 #. are <a> tags
@@ -147,6 +96,7 @@ msgid ""
 "WooCommerce to function. Please %3$sinstall WooCommerce%4$s."
 msgstr ""
 
+#: build/woocommerce-new-customer-report.php:58
 #: woocommerce-new-customer-report.php:58
 #. translators: Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s
 #. are <a> tags
@@ -154,6 +104,16 @@ msgid ""
 "%1$sWooCommerce New Customer Report is inactive.%2$s This plugin requires "
 "WooCommerce 2.3 or newer. Please %3$supdate WooCommerce to version 2.3 or "
 "newer%4$s."
+msgstr ""
+
+#: build/woocommerce-new-customer-report.php:151
+#: woocommerce-new-customer-report.php:151
+msgid "View Report"
+msgstr ""
+
+#: build/woocommerce-new-customer-report.php:184
+#: woocommerce-new-customer-report.php:184
+msgid "New vs. Returning"
 msgstr ""
 
 #. Plugin Name of the plugin/theme

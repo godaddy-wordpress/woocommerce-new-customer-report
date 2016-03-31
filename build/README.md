@@ -31,3 +31,7 @@ We're happy to accept contributions! Feel free to add an issue or submit a PR :)
 
 **2016.03.30 - version 1.0.0**
  * Initial Release
+ 
+### License
+
+This plugin is licensed under the GPL v3: [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.html)

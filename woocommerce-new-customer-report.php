@@ -24,41 +24,16 @@
  *
  */
 
-
-defined( 'ABSPATH' ) or exit; // Exit if accessed directly
-
-
-// Check if WooCommerce is active
-if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-
-	function wc_new_customer_report_wc_needed_notice() {
-
-		$message = sprintf(
-		/* translators: Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-			esc_html__( '%1$sWooCommerce New Customer Report is inactive.%2$s This plugin requires WooCommerce to function. Please %3$sinstall WooCommerce%4$s.', 'woocommerce-new-customer-report' ),
-			'<strong>',
-			'</strong>',
-			'<a href="' . admin_url( 'plugins.php' ) . '">',
-			'&nbsp;&raquo;</a>'
-		);
-
-		echo sprintf( '<div class="error"><p>%s</p></div>', $message );
-	}
-
-	add_action( 'admin_notices', 'wc_new_customer_report_wc_needed_notice' );
-
-	return;
-}
-
+defined( 'ABSPATH' ) or exit;
 
 // WC version check
-if ( version_compare( get_option( 'woocommerce_db_version' ), '2.3.0', '<' ) ) {
+if ( ! in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) || version_compare( get_option( 'woocommerce_db_version' ), '2.4.0', '<' ) ) {
 
 	function wc_new_customer_report_outdated_version_notice() {
 
 		$message = sprintf(
 		/* translators: Placeholders: %1$s and %2$s are <strong> tags. %3$s and %4$s are <a> tags */
-			esc_html__( '%1$sWooCommerce New Customer Report is inactive.%2$s This plugin requires WooCommerce 2.3 or newer. Please %3$supdate WooCommerce to version 2.3 or newer%4$s.', 'woocommerce-new-customer-report' ),
+			esc_html__( '%1$sWooCommerce New Customer Report is inactive.%2$s This plugin requires WooCommerce 2.4 or newer. Please %3$supdate WooCommerce to version 2.4 or newer%4$s.', 'woocommerce-new-customer-report' ),
 			'<strong>',
 			'</strong>',
 			'<a href="' . admin_url( 'plugins.php' ) . '">',
@@ -69,7 +44,6 @@ if ( version_compare( get_option( 'woocommerce_db_version' ), '2.3.0', '<' ) ) {
 	}
 
 	add_action( 'admin_notices', 'wc_new_customer_report_outdated_version_notice' );
-
 	return;
 }
 
@@ -78,12 +52,16 @@ if ( version_compare( get_option( 'woocommerce_db_version' ), '2.3.0', '<' ) ) {
  * Plugin Description
  *
  * WooCommerce New Customer Report adds a report to the WooCommerce > Reports > Customer section.
- * This report tracks whether a customer is new vs returning based on whether the billing address
- *    has been used or not for an order before the start of the selected date range.
+ *
+ * This report tracks whether a customer is new vs returning based on whether the billing email
+ *  has been used or not for an order before the start of the selected date range.
  */
 
 
 if ( ! class_exists( 'WC_New_Customer_Report' ) ) :
+
+// fire it up!
+add_action( 'plugins_loaded', 'wc_new_customer_report' );
 
 /**
  * Sets up the plugin and loads the reporting class
@@ -99,6 +77,11 @@ class WC_New_Customer_Report {
 	protected static $instance;
 
 
+	/**
+	 * WC_New_Customer_Report constructor.
+	 *
+	 * @since 1.0.0
+	 */
 	public function __construct() {
 
 		// load translations
@@ -119,52 +102,6 @@ class WC_New_Customer_Report {
 
 		}
 
-	}
-
-
-	/** Helper methods ***************************************/
-
-
-	/**
-	 * Main WC_New_Customer_Report Instance, ensures only one instance is/can be loaded
-	 *
-	 * @since 1.0.0
-	 * @see wc_new_customer_report()
-	 * @return WC_New_Customer_Report
-	 */
-	public static function instance() {
-		if ( is_null( self::$instance ) ) {
-			self::$instance = new self();
-		}
-		return self::$instance;
-	}
-
-
-	/**
-	 * Adds plugin page links
-	 *
-	 * @since 1.0.0
-	 * @param array $links all plugin links
-	 * @return array $links all plugin links + our custom links (i.e., "Settings")
-	 */
-	public function add_plugin_links( $links ) {
-
-		$plugin_links = array(
-			'<a href="' . admin_url( 'admin.php?page=wc-reports&tab=customers&report=new_customers' ) . '">' . __( 'View Report', 'woocommerce-new-customer-report' ) . '</a>',
-		);
-
-		return array_merge( $plugin_links, $links );
-	}
-
-
-	/**
-	 * Load Translations
-	 *
-	 * @since 1.0.0
-	 */
-	public function load_translation() {
-		// localization
-		load_plugin_textdomain( 'woocommerce-new-customer-report', false, dirname( plugin_basename( __FILE__ ) ) . '/i18n/languages' );
 	}
 
 
@@ -212,6 +149,73 @@ class WC_New_Customer_Report {
 	}
 
 
+	/** Helper methods ***************************************/
+
+
+	/**
+	 * Main WC_New_Customer_Report Instance, ensures only one instance is/can be loaded
+	 *
+	 * @since 1.0.0
+	 * @see wc_new_customer_report()
+	 * @return WC_New_Customer_Report
+	 */
+	public static function instance() {
+		if ( is_null( self::$instance ) ) {
+			self::$instance = new self();
+		}
+		return self::$instance;
+	}
+
+
+	/**
+	 * Cloning instances is forbidden due to singleton pattern.
+	 *
+	 * @since 1.1.0
+	 */
+	public function __clone() {
+		/* translators: Placeholders: %s - plugin name */
+		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot clone instances of %s.', 'woocommerce-new-customer-report' ), 'WooCommerce New Customer Report' ), '1.1.0' );
+	}
+
+
+	/**
+	 * Unserializing instances is forbidden due to singleton pattern.
+	 *
+	 * @since 1.1.0
+	 */
+	public function __wakeup() {
+		/* translators: Placeholders: %s - plugin name */
+		_doing_it_wrong( __FUNCTION__, sprintf( esc_html__( 'You cannot unserialize instances of %s.', 'woocommerce-new-customer-report' ), 'WooCommerce New Customer Report' ), '1.1.0' );
+	}
+
+	/**
+	 * Adds plugin page links
+	 *
+	 * @since 1.0.0
+	 * @param array $links all plugin links
+	 * @return array $links all plugin links + our custom links (i.e., "Settings")
+	 */
+	public function add_plugin_links( $links ) {
+
+		$plugin_links = array(
+			'<a href="' . admin_url( 'admin.php?page=wc-reports&tab=customers&report=new_customers' ) . '">' . __( 'View Report', 'woocommerce-new-customer-report' ) . '</a>',
+		);
+
+		return array_merge( $plugin_links, $links );
+	}
+
+
+	/**
+	 * Load Translations
+	 *
+	 * @since 1.0.0
+	 */
+	public function load_translation() {
+		// localization
+		load_plugin_textdomain( 'woocommerce-new-customer-report', false, dirname( plugin_basename( __FILE__ ) ) . '/i18n/languages' );
+	}
+
+
 	/** Lifecycle methods ***************************************/
 
 
@@ -250,7 +254,8 @@ class WC_New_Customer_Report {
 		update_option( 'wc_new_customer_report_version', $version );
 	}
 
-} // end \WC_New_Customer_Report class
+
+}
 
 
 /**
@@ -260,11 +265,7 @@ class WC_New_Customer_Report {
  * @return WC_New_Customer_Report
  */
 function wc_new_customer_report() {
-    return WC_New_Customer_Report::instance();
+	return WC_New_Customer_Report::instance();
 }
-
-
-// fire it up!
-wc_new_customer_report();
 
 endif;

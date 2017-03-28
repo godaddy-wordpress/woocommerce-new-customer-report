@@ -31,6 +31,9 @@ We're happy to accept contributions! Feel free to add an issue or submit a PR :)
 
 **2017.03.27 - version 1.1.0**
  * Feature: Adds support for the [GitHub updater plugin](https://github.com/afragen/github-updater)
+ * Misc: Added support for WooCommerce 3.0
+ * Misc: Removed support for WooCommerce 2.3
+ 
 **2016.03.30 - version 1.0.0**
  * Initial Release
  

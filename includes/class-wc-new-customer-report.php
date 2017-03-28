@@ -17,13 +17,11 @@
  *
  * @package     WC-New-Customer-Report/Includes/
  * @author      SkyVerge
- * @copyright   Copyright (c) 2016, SkyVerge, Inc.
+ * @copyright   Copyright (c) 2016-2017, SkyVerge, Inc.
  * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 
-
-defined( 'ABSPATH' ) or exit; // Exit if accessed directly
-
+defined( 'ABSPATH' ) or exit;
 
 /**
  * New Customer Report Admin Report Class
@@ -37,10 +35,9 @@ class WC_New_Customer_Report_Report extends WC_Admin_Report {
 
 	/** @var array define the chart colors for this report */
 	protected $chart_colors = array(
-		'new_customers'            => '#b1d4ea',
-		'returning_customers'      => '#87d4a8',
+		'new_customers'       => '#b1d4ea',
+		'returning_customers' => '#87d4a8',
 	);
-
 
 	/** @var stdClass for caching multiple calls to get_report_data() */
 	protected $report_data;
@@ -162,8 +159,8 @@ class WC_New_Customer_Report_Report extends WC_Admin_Report {
 
 		$data = $this->get_report_data();
 
-		$new_customers          = $this->prepare_chart_data( $data->customers, 'date', 'new_customers', $this->chart_interval, $this->start_date, $this->chart_groupby );
-		$returning_customers    = $this->prepare_chart_data( $data->customers, 'date', 'returning_customers', $this->chart_interval, $this->start_date, $this->chart_groupby );
+		$new_customers       = $this->prepare_chart_data( $data->customers, 'date', 'new_customers', $this->chart_interval, $this->start_date, $this->chart_groupby );
+		$returning_customers = $this->prepare_chart_data( $data->customers, 'date', 'returning_customers', $this->chart_interval, $this->start_date, $this->chart_groupby );
 
 		$chart_data = json_encode( array(
 			'new_customers'       => array_values( $new_customers ),
@@ -305,7 +302,6 @@ class WC_New_Customer_Report_Report extends WC_Admin_Report {
 			'order_status' => array( 'completed', 'processing', 'on-hold' ),
 		) );
 
-
 		$prior_order_emails = $current_order_emails = array();
 
 		foreach ( $orders as $order ) {
@@ -365,8 +361,9 @@ class WC_New_Customer_Report_Report extends WC_Admin_Report {
 			}
 
 			$c = new stdClass();
-			$c->date = $date;
-			$c->new_customers = count( array_unique( $new_customers ) );
+
+			$c->date                = $date;
+			$c->new_customers       = count( array_unique( $new_customers ) );
 			$c->returning_customers = count( array_unique( $returning_customers ) );
 
 			$customers[] = $c;

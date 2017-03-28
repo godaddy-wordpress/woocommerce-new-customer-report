@@ -2,10 +2,10 @@
 Contributors: skyverge
 Tags: woocommerce, reports, customers, reporting
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+New+Customer+Report
-Requires at least: 4.0
-Tested up to: 4.4.2
-Requires WooCommerce at least: 2.3
-Tested WooCommerce up to: 2.5
+Requires at least: 4.1
+Tested up to: 4.7.3
+Requires WooCommerce at least: 2.4
+Tested WooCommerce up to: 3.0
 Stable Tag: 1.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -16,7 +16,7 @@ Adds a customer report to view new vs returning customers for a selected date ra
 
 WooCommerce New Customer Report adds a "New vs Returning" customer report to the WooCommerce Reports section. WooCommerce's core Customers vs Guests report can tell you the number of new customer _accounts_, but not new customers overall. For a specified date range, this report shows you customers who made a first purchase in this time period vs customers who have made a repeat purchase.
 
-> **Requires: WooCommerce 2.3+ and WordPress 4.0+**
+> **Requires: WooCommerce 2.4+ and WordPress 4.1+**
 
 = Features =
 Includes options to:
@@ -70,5 +70,8 @@ Yes you can! Join in on our [GitHub repository](https://github.com/skyverge/wooc
 
 = 2017.03.27 - version 1.1.0 =
  * Feature: Adds support for the [GitHub updater plugin](https://github.com/afragen/github-updater)
+ * Misc: Added support for WooCommerce 3.0
+ * Misc: Removed support for WooCommerce 2.3
+
 = 2016.03.30 - version 1.0.0 =
  * Initial Release

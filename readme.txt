@@ -6,7 +6,7 @@ Requires at least: 4.0
 Tested up to: 4.4.2
 Requires WooCommerce at least: 2.3
 Tested WooCommerce up to: 2.5
-Stable Tag: 1.0.0
+Stable Tag: 1.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -68,5 +68,7 @@ Yes you can! Join in on our [GitHub repository](https://github.com/skyverge/wooc
 
 == Changelog ==
 
+= 2017.03.27 - version 1.1.0 =
+ * Feature: Adds support for the [GitHub updater plugin](https://github.com/afragen/github-updater)
 = 2016.03.30 - version 1.0.0 =
  * Initial Release

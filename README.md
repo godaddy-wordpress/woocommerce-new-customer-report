@@ -29,6 +29,8 @@ We're happy to accept contributions! Feel free to add an issue or submit a PR :)
 
 ### Changelog
 
+**2017.03.27 - version 1.1.0**
+ * Feature: Adds support for the [GitHub updater plugin](https://github.com/afragen/github-updater)
 **2016.03.30 - version 1.0.0**
  * Initial Release
  

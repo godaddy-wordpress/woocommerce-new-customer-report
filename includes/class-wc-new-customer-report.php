@@ -17,7 +17,7 @@
  *
  * @package     WC-New-Customer-Report/Includes/
  * @author      SkyVerge
- * @copyright   Copyright (c) 2016-2017, SkyVerge, Inc.
+ * @copyright   Copyright (c) 2016-2023, SkyVerge, Inc.
  * @license     http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  */
 

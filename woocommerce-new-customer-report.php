@@ -5,13 +5,13 @@
  * Description: Provides reporting on new customers vs returning customers for a given date range
  * Author: SkyVerge
  * Author URI: http://www.skyverge.com/
- * Version: 1.1.0
+ * Version: 1.2.0-dev.1
  * Text Domain: woocommerce-new-customer-report
  *
  * GitHub Plugin URI: skyverge/woocommerce-new-customer-report
  * GitHub Branch: master
  *
- * Copyright: (c) 2016-2017 SkyVerge, Inc. (info@skyverge.com)
+ * Copyright: (c) 2016-2023 SkyVerge, Inc. (info@skyverge.com)
  *
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -19,9 +19,11 @@
  * @package   WC-New-Customer-Report
  * @author    SkyVerge
  * @category  Admin
- * @copyright Copyright (c) 2016-2017, SkyVerge, Inc.
+ * @copyright Copyright (c) 2016-2023, SkyVerge, Inc.
  * @license   http://www.gnu.org/licenses/gpl-3.0.html GNU General Public License v3.0
  *
+ * WC requires at least: 3.9.4
+ * WC tested up to: 7.8.0
  */
 
 defined( 'ABSPATH' ) or exit;
@@ -71,7 +73,7 @@ add_action( 'plugins_loaded', 'wc_new_customer_report' );
 class WC_New_Customer_Report {
 
 
-	const VERSION = '1.1.0';
+	const VERSION = '1.2.0-dev.1';
 
 	/** @var WC_New_Customer_Report single instance of this plugin */
 	protected static $instance;

@@ -104,6 +104,26 @@ class WC_New_Customer_Report {
 
 		}
 
+
+		// handle HPOS compatibility
+		add_action( 'before_woocommerce_init', [ $this, 'handle_hpos_compatibility' ] );
+	}
+
+
+	/**
+	 * Declares HPOS compatibility.
+	 *
+	 * @since 1.2.0-dev.1
+	 *
+	 * @internal
+	 *
+	 * @return void
+	 */
+	public function handle_hpos_compatibility()
+	{
+		if ( class_exists(\Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+			\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', plugin_basename( __FILE__ ), true );
+		}
 	}
 
 

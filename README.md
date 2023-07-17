@@ -13,7 +13,7 @@ This is also calculated on a "per group" basis (the bars in the bar graph). For 
  - Customer A purchased Monday for the first time
  - Customer B purchased Tuesday for the 5th time
  - Customer A purchased Friday again for the 2nd time
- 
+
 The report will show you **one** new customer (on Monday), and **two** returning customers (one Tuesday, one Friday), as customer A will be counted as both a new and returning customer.
 
 New customer count for a time period will always show the number of people who have made a **first purchase** in this time period accurately, while returning customer count may include new customers who also come back to make a repeat purchase.
@@ -27,16 +27,6 @@ We're happy to accept contributions! Feel free to add an issue or submit a PR :)
  - The [screenshots](/skyverge/woocommerce-new-customer-report/tree/master/screenshots) will show you the plugin in action.
  - Found it useful? We love hearing feedback, and we always [appreciate donations](https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=paypal@skyverge.com&item_name=Donation+for+WooCommerce+New+Customer+report) to fund more free development.
 
-### Changelog
-
-**2017.03.27 - version 1.1.0**
- * Feature: Adds support for the [GitHub updater plugin](https://github.com/afragen/github-updater)
- * Misc: Added support for WooCommerce 3.0
- * Misc: Removed support for WooCommerce 2.3
- 
-**2016.03.30 - version 1.0.0**
- * Initial Release
- 
 ### License
 
 This plugin is licensed under the GPL v3: [GNU General Public License v3.0](http://www.gnu.org/licenses/gpl-3.0.html)
